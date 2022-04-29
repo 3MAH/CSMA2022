@@ -8,7 +8,7 @@ RUN apt-get update -y && \
     
 USER $NB_UID
 
-RUN conda install -c conda-forge -c cadquery -c set3mah microgen -y
+RUN conda install -c conda-forge -c cadquery -c set3mah microgen simcoon fedoo -y
 
 RUN pip install jupyter_cadquery pyvista ipyvtklink
 

@@ -41,7 +41,7 @@ RUN apt-get update \
  && apt-get clean && rm -rf /var/lib/apt/lists/*
  
  
-RUN conda install -y -c conda-forge -c cadquery -c set3mah microgen
+RUN conda install -y -c conda-forge -c cadquery -c set3mah microgen=master
 RUN conda install -y -c conda-forge ipygany pyvista
 
 

@@ -1,0 +1,11 @@
+channels:
+  - conda-forge
+  - cadquery
+  - set3mah
+dependencies:
+  - microgen=1.0.0=master
+  - ipygany
+  - pyvista
+  - pip:
+    - jupyter_cadquery
+    - ipyvtklink

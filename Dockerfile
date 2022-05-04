@@ -58,7 +58,7 @@ RUN pip install jupyter_cadquery
 
 
 
-USER jovyan
+# USER jovyan
 WORKDIR $HOME
 
 COPY . ${HOME}

@@ -41,7 +41,7 @@ RUN apt-get update \
  && apt-get clean && rm -rf /var/lib/apt/lists/*
  
  
-RUN conda install -y -c conda-forge -c cadquery -c set3mah microgen
+RUN conda install -y -c conda-forge -c cadquery -c set3mah microgen=1.0.0=master
 RUN conda install -y -c conda-forge ipygany pyvista
 
 
@@ -58,7 +58,7 @@ RUN pip install jupyter_cadquery
 
 
 
-USER jovyan
+# USER jovyan
 WORKDIR $HOME
 
 COPY . ${HOME}

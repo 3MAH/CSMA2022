@@ -6,6 +6,8 @@ dependencies:
   - microgen=1.0.0=master
   - ipygany
   - pyvista
+  - pip
+  - hdf5 1.10.6 *1114
   - pip:
     - jupyter_cadquery
     - ipyvtklink

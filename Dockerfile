@@ -42,7 +42,7 @@ RUN apt-get update \
  
  
 RUN conda install -y -c conda-forge -c cadquery -c set3mah microgen=1.0.0=master
-RUN conda install -y -c conda-forge ipygany pyvista
+RUN conda install -y -c conda-forge ipygany pyvista sidecar
 
 
 RUN pip install jupyter_cadquery

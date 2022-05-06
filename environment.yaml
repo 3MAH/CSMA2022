@@ -11,3 +11,4 @@ dependencies:
   - pip:
     - jupyter_cadquery
     - ipyvtklink
+    - sidecar

@@ -9,7 +9,7 @@ RUN apt-get update \
     libosmesa6 \
     xvfb \
  && apt-get clean && rm -rf /var/lib/apt/lists/*
-USER jovyan
+# USER jovyan
 
 
 RUN conda install -y -c conda-forge -c cadquery -c set3mah microgen simcoon fedoo

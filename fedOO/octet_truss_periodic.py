@@ -14,10 +14,10 @@ import pyvista as pv
 Util.ProblemDimension("3D")
 
 #Import the mesh generated with Microgen 
-Mesh.ImportFromFile('data/octet_surf.msh', meshID = "Domain")
+Mesh.ImportFromFile('data/octet_3_quad.msh', meshID = "Domain")
 
 #Get the imported mesh 
-mesh = Mesh.GetAll()["Domain2"]
+mesh = Mesh.GetAll()['Domain2']
 
 #Get the bounding box (corners coordinates and center)
 Xmin, Xmax, crd_center = mesh.GetBoundingBox(return_center = True)
@@ -37,7 +37,7 @@ material = ConstitutiveLaw.ElasticIsotrop(2e5, 0.3, ID = 'ConstitutiveLaw')
 wf = WeakForm.InternalForce(material, ID = "WeakForm", nlgeom=False)
 
 # Assembly
-assemb = Assembly.Create("WeakForm", "Domain2", ID="Assembly")
+assemb = Assembly.Create("WeakForm", mesh, ID="Assembly")
 
 # Type of problem
 pb = Problem.Static("Assembly", ID = 'octet truss')
@@ -49,7 +49,7 @@ pb.AddOutput('results_octet', 'Assembly', ['disp', 'stress', 'strain'], output_t
 # Boundary conditions for the linearized strain tensor
 E = [0, 0, 0, 0.1, 0, 0]  # [EXX, EYY, EZZ, EXY, EXZ, EYZ]
 
-Homogen.DefinePeriodicBoundaryCondition('Domain2',
+Homogen.DefinePeriodicBoundaryCondition(mesh,
 	    [StrainNodes[0], StrainNodes[0], StrainNodes[0],
          StrainNodes[1], StrainNodes[1], StrainNodes[1]],
         ['DispX', 'DispY', 'DispZ', 'DispX', 'DispY', 'DispZ'], dim='3D', ProblemID = 'octet truss')
@@ -87,9 +87,13 @@ sargs = dict(
     # n_colors= 10
 )
 
+cpos = [(-2.69293081283409, 0.4520024822911473, 2.322209100082263),
+        (0.4698685969042552, 0.46863550630755524, 0.42428354242422084),
+        (0.5129241539116808, 0.07216479580221505, 0.8553952621921701)]
+pl.camera_position = cpos
 
 # pl.add_mesh(meshplot.warp_by_vector(factor = 5), scalars = 'Stress', component = 2, clim = [0,10000], show_edges = True, cmap="bwr")
-pl.add_mesh(meshplot.warp_by_vector(factor = 3), scalars = 'Stress', component = 2, show_edges = True, scalar_bar_args=sargs)
+pl.add_mesh(meshplot.warp_by_vector(factor = 3), scalars = 'Stress', component = 3, show_edges = True, scalar_bar_args=sargs, cmap="bwr")
 
-pl.save_graphic('test.pdf', title='PyVista Export', raster=True, painter=True)
-pl.show()
+cpos = pl.show(screenshot='octet.png', return_cpos = True)
+# pl.save_graphic('test.pdf', title='PyVista Export', raster=True, painter=True)

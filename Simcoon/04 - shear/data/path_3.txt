@@ -1,5 +1,5 @@
 #Initial_temperature
-293.15
+290
 #Number_of_blocks
 1
 
@@ -12,18 +12,34 @@
 #Repeat
 1
 #Steps
-1
+2
 
 #Mode
 1
 #Dn_init 1.
 #Dn_mini 1.
-#Dn_inc 0.001
+#Dn_inc 0.01
 #time
-300
+1
 #Consigne
-S 1000
+S 0
+S 0 S 0
+S 0 S 0 S 100
+#Consigne_T
+T 290
+
+#Mode
+1
+#Dn_init 1.
+#Dn_mini 1
+#Dn_inc 0.01
+#time
+1
+#Consigne
+S 0
 S 0 S 0
 S 0 S 0 S 0
 #Consigne_T
-T 293.15
+T 290
+
+

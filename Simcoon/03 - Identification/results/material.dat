@@ -1,0 +1,27 @@
+Material
+Name	EPCHA
+Number_of_material_parameters	10
+Number_of_internal_variables	33
+
+#Orientation
+psi	0
+theta	0
+phi	0
+
+#Mechancial
+E	140000
+nu_A 	0.3
+alphaA 1.E-6
+sigmaY	70.166259
+Q	992.540805
+b	1.676904
+C_1	30114.260500
+D_1	171.361676
+C_2	131274.756215
+D_2	2242.709238
+
+
+
+
+
+

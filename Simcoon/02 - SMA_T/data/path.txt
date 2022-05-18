@@ -1,7 +1,7 @@
 #Initial_temperature
-293.15
+323.15
 #Number_of_blocks
-1
+2
 
 #Block
 1
@@ -12,7 +12,7 @@
 #Repeat
 1
 #Steps
-5
+1
 
 #Mode
 1
@@ -20,13 +20,75 @@
 #Dn_mini 1.
 #Dn_inc 0.001
 #time
-300
+30
 #Consigne
-S 200
+E 0.08
 S 0 S 0
 S 0 S 0 S 0
 #Consigne_T
-T 293.15
+T 323.15
+
+#Block
+2
+#Loading_type
+1
+#Control_type(NLGEOM)
+1
+#Repeat
+4
+#Steps
+2
+
+#Mode
+1
+#Dn_init 1.
+#Dn_mini 0.01
+#Dn_inc 0.0005
+#time
+60
+#Consigne
+E -0.08
+S 0 S 0
+S 0 S 0 S 0
+#Consigne_T
+T 323.15
+
+#Mode
+1
+#Dn_init 1.
+#Dn_mini 0.01
+#Dn_inc 0.0005
+#time
+60
+#Consigne
+E 0.08
+S 0 S 0
+S 0 S 0 S 0
+#Consigne_T
+T 323.15
+
+#Block
+3
+#Loading_type
+1
+#Repeat
+1
+#Steps
+2
+
+#Mode
+1
+#Dn_init 1.
+#Dn_mini 0.01
+#Dn_inc 0.001
+#time
+30
+#Consigne
+E 0
+S 0 S 0
+S 0 S 0 S 0
+#Consigne_T
+T 323.15
 
 #Mode
 1
@@ -34,52 +96,10 @@ T 293.15
 #Dn_mini 1.
 #Dn_inc 0.001
 #time
-300
+30
 #Consigne
-S -250
+S 0
 S 0 S 0
 S 0 S 0 S 0
 #Consigne_T
-T 293.15
-
-#Mode
-1
-#Dn_init 1.
-#Dn_mini 1.
-#Dn_inc 0.001
-#time
-300
-#Consigne
-S 300
-S 0 S 0
-S 0 S 0 S 0
-#Consigne_T
-T 293.15
-
-#Mode
-1
-#Dn_init 1.
-#Dn_mini 1.
-#Dn_inc 0.001
-#time
-300
-#Consigne
-S -350
-S 0 S 0
-S 0 S 0 S 0
-#Consigne_T
-T 293.15
-
-#Mode
-1
-#Dn_init 1.
-#Dn_mini 1.
-#Dn_inc 0.001
-#time
-300
-#Consigne
-S 400
-S 0 S 0
-S 0 S 0 S 0
-#Consigne_T
-T 293.15
+T 323.15

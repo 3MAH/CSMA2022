@@ -12,17 +12,31 @@
 #Repeat
 1
 #Steps
-1
+2
 
 #Mode
 1
 #Dn_init 1.
 #Dn_mini 1.
-#Dn_inc 1
+#Dn_inc 0.01
 #time
 300
 #Consigne
 S 1000
+S 0 S 0
+S 0 S 0 S 0
+#Consigne_T
+T 293.15
+
+#Mode
+1
+#Dn_init 1.
+#Dn_mini 1.
+#Dn_inc 0.01
+#time
+300
+#Consigne
+S 0
 S 0 S 0
 S 0 S 0 S 0
 #Consigne_T
